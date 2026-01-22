@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DASHBOARD Kasir</title>
+  <link rel="stylesheet" href="kasir.css" />
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="kasir.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+  <div class="brand">
+    <img src="aset/lg1.png" alt="Logo Resto" class="brand-logo">
+   
+  </div>      <ul>
+        <li class="home active">Home</li>
+        <li class="data">Data</li>
+        <li class="menu">Menu & Stock</li>
+        <li class="inventori">Inventori</li>
+        <li class="transaksi">Transaksi</li>
+        <li class="penjualan">Penjualan</li>
+        <li class="keuangan">Keuangan</li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT UTAMA -->
+<main class="content">
+
+  <!-- HEADER (STICKY) -->
+  <div class="header">
+    <h1>RESTO PARA xxxx</h1>
+  </div>
+
+  <!-- DASHBOARD (STICKY) -->
+  <div class="dashboard">
+    <div class="card">🛒<span>Cashier</span></div>
+    <div class="card">🍳<span>Kitchen</span></div>
+    <div class="card booked-card">
+      📅<span>Booked</span>
+      <span class="badge" id="orderBadge">0</span>
+    </div>
+    <div class="card">🍽️<span>Table</span></div>
+    <div class="card">🚚<span>Delivery</span></div>
+  </div>
+
+  <!-- AREA SCROLL -->
+  <section class="scroll-area">
+
+    <h2>Pesanan Masuk</h2>
+    <table id="orderList">
+      <thead>
+        <tr>
+          <th>Nomor Meja</th>
+          <th>Nama Pemesan</th>
+          <th>Metode Pembayaran</th>
+          <th>Rincian Pesanan</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="orders"></tbody>
+    </table>
+
+    <h2>Pesanan Disetujui</h2>
+    <table id="approvedList">
+      <thead>
+        <tr>
+          <th>ID Pesanan</th>
+          <th>No Meja</th>
+          <th>Metode</th>
+          <th>Total</th>
+          <th>Waktu</th>
+          <th>Nota</th>
+        </tr>
+      </thead>
+      <tbody id="approvedOrders"></tbody>
+    </table>
+
+  </section>
+</main>
+
+
+  <!-- MODAL POPUP -->
+  <div id="detailModal" class="modal">
+    <div class="modal-box">
+      <h3>Detail Pesanan</h3>
+      <div id="modalContent"></div>
+      <button class="btn-close" onclick="closeModal()">Tutup</button>
+    </div>
+  </div>
+<audio id="notifSound">
+  <source src="aset/notif suara.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>

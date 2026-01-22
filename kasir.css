@@ -1,0 +1,304 @@
+/* ======== GLOBAL STYLE ======== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('aset/latar.jpg');
+  color: #333;
+}
+
+/* ======== CONTAINER FLEX ======== */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ======== SIDEBAR ======== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-image: url('aset/latar.jpg');
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+
+.sidebar .brand {
+  font-size: 24px;
+  font-weight: 700;      /* Tulisan tebal */
+  margin-bottom: 30px;
+  text-align: center;    /* Rata tengah */
+  background: #f2f9f7b5;
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  color: #fff;
+  font-weight: 700;      /* Tulisan tebal */
+  text-align: center;    /* Rata tengah */
+}
+
+/* Warna khusus untuk tiap menu */
+.sidebar ul li.home { background: #99c5bc; color:#000; }        /* Hijau toska */
+.sidebar ul li.data { background: #e2bb1c; color:#040000; }        /* Biru */
+.sidebar ul li.menu { background: #9b59b6; color:#f1ecec; }        /* Ungu */
+.sidebar ul li.inventori { background: #e67e22; color:#f7e8e8; }   /* Oranye */
+.sidebar ul li.transaksi { background: #e74c3c; color:#f7f3f3; }   /* Merah */
+.sidebar ul li.penjualan { background: #f1c40f; color:#000; } /* Kuning */
+.sidebar ul li.keuangan { background: #e27013; color:#f6f0f0; }  /* Abu gelap */
+
+/* Hover efek (lebih terang saat mouse over) */
+.sidebar ul li:hover { filter: brightness(1.2); }
+
+/* Jika menu aktif, beri border atau efek */
+.sidebar ul li.active {
+  border: 2px solid #fff;
+}
+
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background: #c6dfd7;
+  color: #100101;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.brand-logo {
+  width: 140px;
+  height: 100px;
+  object-fit: contain;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 50;
+  padding-bottom: 10px;
+}
+
+.dashboard {
+  position: sticky;
+  top: 70px; /* sesuaikan tinggi header */
+  background-image: url('aset/latar.jpg');
+  z-index: 40;
+  padding-bottom: 0px;
+}
+
+/* ======== CONTENT ======== */
+.content {
+  margin-left: 220px;   /* sama dengan lebar sidebar */
+  flex: 1;
+  padding: 20px;
+    background-image: url('aset/latar.jpg');
+  height: 100vh;
+  overflow: hidden;     /* penting */
+}
+
+
+.header h1 {
+  margin: 0 0 20px 0;
+  font-size: 28px;
+  text-align: center;
+  background-color: rgba(233, 198, 83, 0.95);
+}
+
+/* ======== DASHBOARD ======== */
+.dashboard {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+ 
+}
+
+.dashboard .card {
+  flex: 1;
+  min-width: 120px;
+  background: #e2ce5c;
+  color: rgb(7, 0, 0);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard .card span {
+  display: block;
+  margin-top: 5px;
+  font-weight: 60px;
+}
+
+/* ======== TABLE STYLE ======== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #acead7;
+  color: #070000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+th {
+  background: #cdebe2;
+  color: #000000;
+  font-weight: 600;
+  padding: 14px;
+  font-size: 15px;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* ======== BUTTONS ======== */
+button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+button:hover { transform: scale(1.05); }
+
+.btn-approve { background: #28a745; }
+.btn-edit { background: #006ee6; }
+.btn-cancel { background: #d63031; }
+
+td button {
+  background: #607d8b;
+}
+
+td button:hover {
+  background: #546e7a;
+}
+
+/* ======== MODAL STYLE ======== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-box {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 95%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-box h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.modal-box table { width: 100%; border-collapse: collapse; }
+.modal-box th { background: #4CAF50; padding: 10px; font-size: 14px; }
+.modal-box td { padding: 8px; border-bottom: 1px solid #ddd; }
+
+.modal-box input[type="number"] {
+  padding: 5px; border: 1px solid #aaa; border-radius: 6px;
+  width: 55px; text-align: center; font-size: 14px;
+}
+
+.modal-box button {
+  padding: 6px 12px; background: #e74c3c;
+  border-radius: 4px; font-size: 13px;
+}
+
+.btn-close {
+  background: #333;
+  padding: 10px 18px;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* ======== ANIMATION ======== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  .sidebar { width: 100%; }
+}
+.booked-card {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  display: none;
+}
+.scroll-area {
+  height: calc(100vh - 220px); /* header + dashboard */
+  overflow-y: auto;
+  padding-right: 30px;
+  background: rgb(119, 106, 181);
+  color: white;
+}
+
+.scroll-area h2 {
+  color:#ffd54f;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: rgb(238, 238, 240);
+
+}
