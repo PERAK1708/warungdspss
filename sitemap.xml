@@ -2,8 +2,11 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://perak1708.github.io/warungdspss/</loc>
-</url>
+    <url>
+        <loc>https://perak1708.github.io/warungdspss/</loc>
+        <lastmod>2026-07-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
 </urlset>
