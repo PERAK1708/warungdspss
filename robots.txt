@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://perak1708.github.io/warungdspss/sitemap.xml
